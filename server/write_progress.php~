@@ -1,0 +1,11 @@
+<?php
+writeProgress(2);
+function writeProgress($complete){
+$myfile = fopen("progress.txt", "w") or die("Unable to open file!");
+$progress = $complete+"%";
+fwrite($myfile, $progress);
+fclose($myfile);
+//sleep(2);
+//writeProgress($progress+2);
+}
+?>
