@@ -28,7 +28,7 @@ while(true){
                 
 		$fileContent = (file_get_contents( $filePath ));
                 //create the PHP array of data to be sent
-		$arrData = array('progress' => $fileContent, 'timestamp' => $fileModificationTimestamp );
+		$arrData = array('progress' => trim($fileContent), 'timestamp' => $fileModificationTimestamp );
 		//prepare JSON response
                 $response = json_encode($arrData);
 		echo $response;

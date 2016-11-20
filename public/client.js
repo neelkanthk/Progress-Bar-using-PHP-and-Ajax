@@ -28,6 +28,12 @@ function sendAJAX(timestamp) {
             //show the proress complete stat
 	    $('.progress-bar #complete-info').html(obj.progress);	
             $('.progress-bar').attr("aria-valuenow",obj.progress);
+	    
+	    if(obj.progress=="100%")
+	    {
+		//Perform action on completion
+	    	$('#status').html("Process Completed.");
+	    }
             //poll the server again with the file stamp sent by server            
             sendAJAX(obj.timestamp);
         },
